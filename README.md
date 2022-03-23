@@ -1,27 +1,64 @@
 # AngularKataPokemon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+# 🐢 Kata Pokemon
 
-## Development server
+## 📄 Subject
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Develop a website where user can list all pokemons and see details on them.
+CSS is not an important part of this kata, feel free if you want adding styles to your pages
 
-## Code scaffolding
+## ✂️ Steps
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1️⃣ Step 1 - Create List page & Details page
 
-## Build
+Create both page of the website with mocked informations.
+the Search Page will be the home page.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**List page**
 
-## Running unit tests
+```
+- List all mocked pokemons described by (Name, pokedex number, type, Image, HP, attack and defense)
+- If user click on a pokemon card he's redirect to the details page
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Details page**
 
-## Running end-to-end tests
+```
+- User can see details of the pokemon on which he clicked
+- Details include : Name, pokedex number, type, Image, hp, attack, defense, attack spe, defense spe and speed)
+- The user can go back to search page when clicking on a back button
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 2️⃣ Step 2 - Unmock your data
 
-## Further help
+In this step delete your mocks and use provided data present into folder `/data` (pokemon-info.ts & pokemon-stats.ts) to retrived data as if you called APIs.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You can choose to retrieve data with :
+
+- Real time method
+- Streaming method
+
+If you begin to practice RxJs maybe choose real-time function which works more like a classic API.
+Otherwise choose streaming to complete fully the kata.
+
+### 3️⃣ Step 3 - Implement filtering
+
+The user shoudl have the possibility to filter pokemons list by entering value into a input field.
+Pokemons can be filtered by Name, pokedex number, type, hp, attack, defense, attack spe, defense spe and speed
+
+### 4️⃣ Step 4 - Add loading info + A stop/resume downlaoding button (With Streaming methods)
+
+Add a real time text loader which display percent of downloaded information
+
+**exemple**: `Loading : 48%`
+
+Moreover, add a button to allow to user to pause downloading when he click on it and resume the downbload when he click second time on it.
+
+### 5️⃣ Step 5 - Compose your team
+
+Add "select" button into `details page` which allow to user to select the pokemon.
+Display the pokemons that user selected somewhere in home page.
+
+### 6️⃣Step 6 - Use a store to handle information
+
+Use a state manager to handle informations state into your application.
